@@ -48,8 +48,8 @@ public class Main {
         }
 
         Map<String, String> graphNames = new HashMap<>();
-        graphNames.put("http://example.org/sdm#tbox", "BDMAG12C-B1-FonsecaHernandezMusaj.rdf");
-        graphNames.put("http://example.org/sdm#abox", "BDMAG12C-B2-FonsecaHernandezMusaj.rdf");
+        graphNames.put("http://example.org/sdm#tbox", "BDMAG12C-B1-FonsecaHernandezMusaj.trix");
+        graphNames.put("http://example.org/sdm#abox", "BDMAG12C-B2-FonsecaHernandezMusaj.trix");
 
         // Write models to XML files
         for (Resource context: model.contexts()) {
