@@ -2,6 +2,7 @@ package example.org;
 
 
 import org.eclipse.rdf4j.model.IRI;
+import org.eclipse.rdf4j.model.Namespace;
 import org.eclipse.rdf4j.model.util.ModelBuilder;
 import org.eclipse.rdf4j.model.util.Values;
 import org.eclipse.rdf4j.model.vocabulary.RDFS;
@@ -9,7 +10,7 @@ import example.org.utils.Constants;
 
 public class Tbox {
     private static Tbox tbox;
-    private static final String NAME_SPACE = Constants.NAME_SPACE;
+    private static final Namespace NAME_SPACE = Constants.NAME_SPACE;
 
     // Classes
     static final IRI AUTHOR = Values.iri(NAME_SPACE, "Author");

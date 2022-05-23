@@ -25,7 +25,7 @@ public class Main {
         System.out.println("Started creating models");
         Repository db = new HTTPRepository(GRAPHDB_SERVER, REPOSITORY_ID);
 
-        ModelBuilder builder = new ModelBuilder().setNamespace("sdm", Constants.NAME_SPACE);
+        ModelBuilder builder = new ModelBuilder().setNamespace(Constants.NAME_SPACE);
 
         ModelBuilder tboxBuilder = builder.namedGraph("sdm:tbox");
         Tbox tbox = Tbox.getInstance();
@@ -47,11 +47,11 @@ public class Main {
             db.shutDown();
         }
 
+        // Write models to rdf (trix) files
         Map<String, String> graphNames = new HashMap<>();
         graphNames.put("http://example.org/sdm#tbox", "BDMAG12C-B1-FonsecaHernandezMusaj.trix");
         graphNames.put("http://example.org/sdm#abox", "BDMAG12C-B2-FonsecaHernandezMusaj.trix");
 
-        // Write models to XML files
         for (Resource context: model.contexts()) {
             try {
                 OutputStream out = new FileOutputStream(graphNames.get(context.toString()));
